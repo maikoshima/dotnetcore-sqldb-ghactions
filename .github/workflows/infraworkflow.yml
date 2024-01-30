@@ -10,6 +10,7 @@ env:
     AZURE_RESOURCEGROUP_NAME: maikoshima-githubactions-rg                      # set this to your preferred resource group name
     AZURE_WEBAPP_NAME: maikoshima-githubactions-webappsql                          # set this to your preferred web app name
     ASP_NAME: maikoshima-githubactions-asp
+    ASP_SKU: P0v3
     SQLSERVER_NAME: maikoshima-githubactions-srv                          # set this to your preferred sql server name
     DATABASE_NAME: maikoshima-githubactions-db                   # set this to your preferred sql database name
     SQLADMIN_LOGIN: ${{ secrets.SQLADMIN_LOGIN  }}                # Create a secret in your Github repo for the SQL Admin login name you want to use
@@ -61,6 +62,6 @@ jobs:
           resourceGroupName: ${{env.AZURE_RESOURCEGROUP_NAME}}
           region: japaneast # Set this to your target region
           template: repo/templates/azuredeploy.json  # Set this to the location of your template file
-          parameters: repo/templates/azuredeploy.parameters.json webappName=${{env.AZURE_WEBAPP_NAME}} aspName=${{env.ASP_NAME}} sqlServerName=${{env.SQLSERVER_NAME}} databaseName=${{env.DATABASE_NAME}} sqlAdminLogin=${{env.SQLADMIN_LOGIN}} sqlAdminPass=${{env.SQLADMIN_PASS}} # Set this to the location of your parameters file
+          parameters: repo/templates/azuredeploy.parameters.json webappName=${{env.AZURE_WEBAPP_NAME}} aspName=${{env.ASP_NAME}} aspSKU=${{env.ASP_SKU}} sqlServerName=${{env.SQLSERVER_NAME}} databaseName=${{env.DATABASE_NAME}} sqlAdminLogin=${{env.SQLADMIN_LOGIN}} sqlAdminPass=${{env.SQLADMIN_PASS}} # Set this to the location of your parameters file
  
 #TODO: Once the infrastructure got created, download web app publish profile of the staging slot and add it as a secret to the repo. It will be used by the workflow.yml file. 
