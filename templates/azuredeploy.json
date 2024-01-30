@@ -142,22 +142,6 @@
             }
         },
         {
-            "name": "[parameters('aspName')]",
-            "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2018-02-01",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "[parameters('aspSKU')]",
-                "capacity": 1
-            },
-            "tags": {
-                "displayName": "[parameters('aspName')]"
-            },
-            "properties": {
-                "name": "[parameters('aspName')]"
-            }
-        },
-        {
             "apiVersion": "2020-06-01",
             "type": "Microsoft.Web/sites/slots",
             "name": "[concat(parameters('webappName'), '/', 'staging')]",
