@@ -19,7 +19,7 @@
             "metadata": {
                 "description": "description"
             },
-            "defaultValue": "B1"
+            "defaultValue": "S1"
         },
         "sqlServerName": {
         "type": "string"
